@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>おうちで自転車旅</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/cycling.js"></script>
+<style>
+html, body {
+    height: 100%;
+    margin: 10;
+    padding: 10;
+}
+
+#street-view {
+    height: 90%;
+    width: 90%;
+}
+</style>
+<!-- keyのxxxxの部分を、取得したGoogle Maps Platform APIキーで置き換えてください -->
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=xxxx&callback=init"
+    async defer></script>
+</head>
+<body onload="getData()">
+    <h1>おうちで自転車旅</h1>
+    まず
+    <a href="https://www.google.co.jp/maps" target="_blank">Googleマップ</a>
+    を開き、 スタート地点にしたい箇所をストリートビューで表示してください。
+    <br> その緯度と経度をコピーして↓のテキストボックスに貼り付け、「ストリートビューを表示」ボタンを押してください。
+    <br> 緯度, 経度＝
+    <input type="text" size="40" id="lat-lng">
+    <button onclick="reload()">ストリートビューを表示</button>
+    &nbsp;&nbsp; / &nbsp;&nbsp;
+    <button onclick="goStraight()">まっすぐ進む（デバッグ用）</button>
+    <div id="street-view"></div>
+</body>
+</html>

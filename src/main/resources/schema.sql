@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS cycling (
+  id   INTEGER      NOT NULL AUTO_INCREMENT,
+  time VARCHAR(256),
+  PRIMARY KEY (id)
+);
